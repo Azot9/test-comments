@@ -117,8 +117,8 @@ form {
     float: left;
 }
 .wrong-field {
-    outline: 1px solid red !important;
-    border: none;
+    border: 1px solid red !important;
+  
 }
 p {
     visibility: hidden;
@@ -188,6 +188,10 @@ input{
         width: 100%;
         padding: 120px 15% 40px;
     }
+    p {
+        margin: 3px 0 15px;
+        padding: 0 15%;
+    }
     .yellow-block {
         display: none;
     }
@@ -196,7 +200,7 @@ input{
         margin: 0px;
     }
     .input-info {
-        margin: 15px auto 25px;
+        margin: 10px auto ;
         width: 70%;
     }
     .send {
