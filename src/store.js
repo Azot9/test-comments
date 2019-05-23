@@ -31,7 +31,7 @@ export default new Vuex.Store({
                     console.log("error: " + status);
                 });
         },
-        addComment({ commit }, comment) {
+        addComment({ dispatch }, comment) {
             new Promise((resolve, reject) => {
                 let xhr = new XMLHttpRequest();
                 xhr.open("POST", "https://5cbef81d06a6810014c66193.mockapi.io/api/comments");
@@ -44,7 +44,7 @@ export default new Vuex.Store({
                 };
             })
                 .then(json => {
-                    commit("download", JSON.parse(json));
+                    dispatch("getComments");
                     console.log("response: " + json);
                 })
                 .catch(status => {

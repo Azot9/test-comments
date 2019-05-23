@@ -29,6 +29,7 @@ export default {
       if (store.state.comments === null) {
           store.dispatch("getComments");
       }
+      console.log(store.state.comments);
       return store.state.comments;
     }
   },
