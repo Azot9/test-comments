@@ -158,5 +158,10 @@ a {
   background-color: rgb(228, 240, 233);
 }
 }
+@media (max-width: 650px) {
+  .adaptive-menu{
+  width: 50%;
+  }
+}
 
 </style>
