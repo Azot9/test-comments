@@ -45,7 +45,6 @@ export default new Vuex.Store({
             })
                 .then(json => {
                     dispatch("getComments");
-                    console.log("response: " + json);
                 })
                 .catch(status => {
                     console.log("error: " + status);

@@ -12,12 +12,12 @@
         :class="{'menu-visibility': isMenuVisible}"
          >
           <div class="hide-menu" @click="showMenu">Hide menu <span>&#129122</span></div>
-          <router-link 
+          <div
           v-for="link in navigations" 
           :to="link.link"
           :key="link.link" 
           exact class="link"
-          tag="div">{{link.text}}</router-link>
+          @click="goToNewPage(link.link)">{{link.text}}</div>
         </div>
             <ul>
                 <router-link v-for="link in navigations" :key="link.link" tag="li" :to="link.link" exact>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import router from "../router.js";
+
 export default {
   name: "AppNavigator",
   data(){
@@ -44,6 +46,10 @@ export default {
   methods: {
     showMenu() {
       this.isMenuVisible = !this.isMenuVisible;
+    },
+    goToNewPage(link){
+       this.isMenuVisible = !this.isMenuVisible;
+       router.push(link)
     }
   }
 };
